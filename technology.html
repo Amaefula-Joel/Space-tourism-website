@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="font-awesome(4.7.0)/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/mainstyle.css">
+
+  <title>Frontend Mentor | Space tourism website</title>
+  <style>
+
+  </style>
+</head>
+
+<body onload="myFunction()">
+
+  <section id="technology">
+    <div id="loader"></div>
+
+    <div class="body-container">
+      <header>
+        <nav class="navbar">
+          <a href="#" class="logo"><img src="assets/shared/logo.svg" alt="site logo "></a>
+
+          <span class="line"></span>
+
+          <ul id="navlink-con">
+            <li><a class="customLink" href="index.html"><b>00</b> Home</a></li>
+            <li><a class="customLink" href="destination.html"><b>01</b> Destination</a></li>
+            <li><a class="customLink" href="crew.html"><b>02</b> Crew</a></li>
+            <li><a class="customLink active" href="#"><b>03</b> Technology</a></li>
+          </ul><!--  -->
+          <button class="toggleNav fa fa-bars"></button>
+        </nav>
+      </header>
+
+      <div class="home-content-con">
+        <h1 class="page-title"><span>03</span> Space launch 101</h1>
+
+        <div class="home-content">
+          <div class="controls">
+            <span onclick="tech(0)">1</span>
+            <span onclick="tech(1)">2</span>
+            <span onclick="tech(2)">3</span>
+          </div>
+          <div class="left">
+            <div class="content">
+
+              <div class="left-content animated fadeIn">
+                <p class="terminology">The terminology...</p>
+
+                <h2 class="big-text page-subtitle">Launch vehicle</h2>
+
+                <p class="rightup">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a
+                  payload from Earth's surface to space, usually to Earth orbit or beyond. Our
+                  WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall,
+                  it's quite an awe-inspiring sight on the launch pad!</p>
+              </div>
+
+              <div class="left-content animated fadeInt">
+                <p class="terminology">The terminology...</p>
+
+                <h2 class="big-text page-subtitle">Spaceport</h2>
+
+                <p class="rightup">A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by
+                  analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our
+                  spaceport is ideally situated to take advantage of the Earth’s rotation for launch.</p>
+              </div>
+
+              <div class="left-content animated fadeIn">
+                <p class="terminology">The terminology...</p>
+
+                <h2 class="big-text page-subtitle">Space capsule</h2>
+
+                <p class="rightup">A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule
+                  to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during
+                  the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="right fill">
+          </div>
+        </div>
+      </div>
+
+
+      <script src="javascript/jquery-3.6.0.min.js"></script>
+      <script src="javascript/myscrpt.js"></script>
+
+      <script>
+        var btn = document.querySelectorAll('.controls span');
+        var content = document.querySelectorAll('.left-content');
+        var image = document.querySelector('.right');
+        var imageList1 = ['assets/technology/image-launch-vehicle-portrait.jpg', 'assets/technology/image-spaceport-portrait.jpg', 'assets/technology/image-space-capsule-portrait.jpg'];
+        var imageList2 = ['assets/technology/image-launch-vehicle-landscape.jpg', 'assets/technology/image-spaceport-landscape.jpg', 'assets/technology/image-space-capsule-landscape.jpg'];
+
+        tech = (n) => {
+          for (let i = 0; i < content.length; i++) {
+            content[i].style.display = 'none';
+          }
+
+          for (let i = 0; i < btn.length; i++) {
+            btn[i].classList.remove('active');
+          }
+
+          content[n].style.display = 'block';
+          btn[n].classList.add('active');
+
+          if (window.innerWidth > 768) {
+            image.style.backgroundImage = 'url(' + imageList1[n] + ')';
+          } else {
+            image.style.backgroundImage = 'url(' + imageList2[n] + ')';
+          }
+
+        }
+        btn[0].click();
+      </script>
+    </div>
+  </section>
+</body>
+
+</html>

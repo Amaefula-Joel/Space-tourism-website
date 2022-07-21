@@ -1,0 +1,56 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3rem;
+  position: relative;
+}
+.navbar .logo img {
+  width: 35px;
+}
+.navbar .line {
+  margin: 0 -3rem 0 4rem;
+  flex-grow: 1;
+  display: inline-block;
+  height: 0.1rem;
+  background-color: rgb(63, 62, 62);
+  z-index: 100;
+}
+.navbar ul {
+  display: flex;
+  justify-content: left;
+  align-items: stretch;
+  list-style-type: none;
+  padding: 0 10%;
+  position: relative;
+  z-index: 10;
+}
+.navbar ul li {
+  margin-left: 4rem;
+}
+.navbar ul li a {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #ccc;
+  padding: 3rem 0;
+  position: relative;
+}
+.navbar ul li a b {
+  color: #fff;
+}
+.navbar ul li:first-child {
+  margin: 0;
+}
+.navbar ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(209, 209, 209, 0.09);
+  z-index: -5;
+}
+.navbar button {
+  display: none;
+}/*# sourceMappingURL=navbar.css.map */

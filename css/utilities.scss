@@ -1,0 +1,24 @@
+@mixin flex($justify: left, $align: stretch) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin font_Frank{
+    font-family: "Frank Ruhl Libre", serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+@mixin  backmage($size) {
+    background-repeat: no-repeat;
+    background-size: $size;
+    background-position: center;
+    
+}
+
+$border : 1px solid #fff;
+$fadeWhite : #aaa;
+$transWhite: #ffffff62;
+$paraSize : 1.5rem;
+$lineHeight: 1.6;
+$tabMinWid: 45rem;

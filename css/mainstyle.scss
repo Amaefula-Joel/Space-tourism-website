@@ -1,0 +1,597 @@
+@import "utilities";
+@import "navbar";
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,900&family=Titillium+Web:ital,wght@0,200;0,400;0,600;0,700;1,200;1,400;1,600;1,700&display=swap');
+@import "loader.css";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+    border: none;
+    text-decoration: none;
+    transition: .3s;
+}
+
+html {
+    font-size: 60%;
+}
+
+body {
+    background-color: black;
+}
+
+section {
+    @include backmage(cover);
+}
+
+h1,
+.page-title,
+.title {
+    text-transform: uppercase;
+}
+
+.body-container {
+    padding-top: 6rem;
+}
+
+.customLink {
+    display: inline-block;
+    position: relative;
+    display: inline-block;
+    color: $fadeWhite;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: .2rem;
+        background-color: #fff;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: .3s;
+    }
+
+    &:hover::after,
+    &.active::after {
+        transform: scaleX(1);
+    }
+}
+
+.home-content-con {
+    padding: 5rem 7% 8%;
+}
+
+.home-content {
+    width: 100%;
+    @include flex(space-between, flex-end);
+    min-height: 50vh;
+}
+
+.content {
+    max-width: $tabMinWid;
+    margin: 0 auto;
+}
+
+.left {
+    width: 40%;
+}
+
+.fill {
+    flex-grow: 1;
+}
+
+.title {
+    @include font_Frank;
+    font-size: 7rem;
+    color: #fff;
+}
+
+.page-title {
+    width: 100%;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    margin-bottom: 1rem;
+
+    span {
+        color: $transWhite;
+        padding-right: 1.2rem;
+    }
+}
+
+.page-subtitle {
+    color: #ccc;
+    @include font_Frank;
+    letter-spacing: .2rem;
+    margin-bottom: 3rem;
+}
+
+
+#home {
+    background-image: url(../assets/home/background-home-desktop.jpg);
+
+    .left {
+        color: $fadeWhite;
+
+        h1 {
+            font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+            font-size: 1.8rem;
+            font-weight: normal;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            letter-spacing: .3rem;
+
+            span {
+                @include font_Frank;
+                font-size: 11rem;
+                color: #fff;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: $lineHeight;
+        }
+    }
+
+    .right {
+        @include flex(flex-end, flex-end);
+
+        div {
+            @include flex(center, center);
+            width: 23rem;
+            height: 23rem;
+            border-radius: 50%;
+            background-color: #fff;
+            @include font_Frank;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+#destination {
+    background-image: url(../assets/destination/background-destination-desktop.jpg);
+    background-size: cover;
+
+    .home-content-con {
+        .left {
+            margin-right: 4rem;
+
+            .img {
+                width: 100%;
+                height: 30rem;
+                @include backmage(contain);
+            }
+        }
+
+        .right {
+            .link-con {
+                margin-bottom: 1.6rem;
+                @include flex();
+
+                >button {
+                    font-size: 1.3rem;
+                    padding: 1.2rem 0;
+                    margin-right: 2rem;
+                    background-color: transparent;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .title {
+                margin-bottom: 1rem;
+            }
+
+            .rightUp {
+                color: $fadeWhite;
+                font-size: $paraSize;
+                line-height: $lineHeight;
+                padding-bottom: 5rem;
+                margin-bottom: 3rem;
+                border-bottom: .1rem solid #ffffff54;
+            }
+
+            .details {
+                @include flex();
+
+                div {
+                    margin-right: 2rem;
+                    text-transform: uppercase;
+
+                    p:first-child {
+                        color: $fadeWhite;
+                        font-size: 1.3rem;
+                        margin-bottom: .7rem;
+                    }
+
+                    .value {
+                        color: #ccc;
+                        font-size: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#crew {
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+
+    .home-content-con {
+        .left {
+            padding: 8% 0;
+            @include flex(stretch, stretch);
+            flex-direction: column;
+
+            .role {
+                color: $transWhite;
+                font-size: 2.6rem;
+                @include font_Frank;
+                margin-bottom: .6rem;
+            }
+
+            .name {
+                font-size: 4rem;
+            }
+
+            .rightup {
+                color: $fadeWhite;
+                font-size: $paraSize;
+                line-height: $lineHeight;
+                padding-bottom: 6rem
+            }
+
+            .controls {
+                @include flex();
+
+                span {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    background-color: $transWhite;
+                    margin-right: 1.8rem;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    &.active,
+                    &:hover {
+                        background-color: #fff;
+                    }
+                }
+
+            }
+        }
+
+        .right {
+            min-height: 30rem;
+            align-self: stretch;
+            @include backmage(contain);
+        }
+    }
+}
+
+#technology {
+    background-image: url(../assets/technology/background-technology-desktop.jpg);
+
+    .home-content-con {
+        .home-content {
+            align-items: center;
+
+            .controls {
+                @include flex();
+                flex-direction: column;
+                margin-right: 4.55%;
+                padding: 6rem 0;
+
+                span {
+                    height: 5.5rem;
+                    width: 5.5rem;
+                    color: #fff;
+                    border: .2rem solid #ffffff42;
+                    margin-bottom: 1.3rem;
+                    border-radius: 50%;
+                    font-size: 2rem;
+                    @include flex(center, center);
+
+                    &.active,
+                    &:hover {
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+            }
+
+            .left {
+                margin-right: 5.5%;
+
+                .terminology {
+                    font-size: 1.5rem;
+                    color: $transWhite;
+                    text-transform: uppercase;
+                }
+
+                .big-text {
+                    font-size: 3.5rem;
+                    margin-bottom: 1rem;
+                }
+
+                .rightup {
+                    color: $fadeWhite;
+                    font-size: 1.5rem;
+                }
+            }
+
+            .right {
+                @include backmage(cover);
+                align-self: stretch;
+                min-height: 30rem;
+                border-radius: .8rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) {
+
+    #destination {
+        .home-content-con {
+            .left {
+                margin-right: 4rem;
+            }
+        }
+    }
+
+    #crew {
+        .home-content-con {
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    #technology {
+        .home-content-con {
+            padding-right: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 57%;
+    }
+
+    .home-content-con {
+        padding: 8rem 4rem 6rem;
+    }
+
+    .home-content {
+        @include flex(space-between, center);
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .page-title {
+        text-align: left;
+        margin-bottom: 4rem;
+    }
+
+
+    .navbar {
+        .line {
+            display: none;
+        }
+
+        ul {
+            padding: 0 5%;
+
+            b {
+                display: none;
+            }
+
+        }
+    }
+
+    .body-container {
+        padding-top: 0;
+        @include backmage(cover);
+    }
+
+    #home {
+        background-image: url(../assets/home/background-home-tablet.jpg);
+
+        .left {
+            margin-bottom: 11rem;
+        }
+
+        .right{            
+            justify-content: center;
+        }
+    }
+
+    #destination {
+        background-image: url(../assets/destination/background-destination-tablet.jpg);
+
+        .home-content-con {
+            .left {
+                margin-bottom: 2rem;
+                margin-right: 0;
+
+                p {
+                    margin-bottom: 3rem;
+                }
+
+                .img {
+                    height: 25rem;
+                }
+            }
+
+            .right {
+                width: 100%;
+
+                .link-con {
+                    @include flex(center, center);
+                }
+
+                .details {
+                    @include flex(center, center);
+                }
+            }
+        }
+    }
+
+    #crew {
+        background-image: url(../assets/crew/background-crew-tablet.jpg);
+
+        .home-content-con {
+            .left {
+                order: 3;
+                padding: 3rem 0 0;
+
+                .left-carousel-content {
+                    order: 2;
+
+                    .role {
+                        font-size: 2rem;
+                    }
+
+                    .name {
+                        font-size: 3rem;
+                    }
+                }
+
+                .controls {
+                    order: 1;
+                    margin-bottom: 2rem;
+                    @include flex(center, stretch);
+                }
+            }
+
+            .right {
+                order: 2;
+                background-position: center;
+            }
+        }
+    }
+
+    #technology {
+        background-image: url(../assets/technology/background-technology-desktop.jpg);
+
+        .home-content-con {
+            .home-content {
+
+                .controls {
+                    order: 2;
+                    flex-direction: row;
+                    margin-right: 0;
+                    padding: 3rem 0;
+
+                    span {
+                        margin: 0 .4rem;
+                    }
+                }
+
+                .left {
+                    margin-right: 0;
+                    order: 3;
+                }
+
+                .right {
+                    order: 1;
+                    min-height: 25rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        html {
+            font-size: 50%;
+        }
+
+        #home {
+            background-image: url(../assets/home/background-home-mobile.jpg);
+
+            .left {
+                margin-bottom: 8rem;
+
+                h1 {
+                    margin-bottom: 3rem;
+
+                    span {
+                        font-size: 9.5rem;
+                    }
+                }
+            }
+        }
+
+        #destination {
+            background-image: url(../assets/destination/background-destination-mobile.jpg);
+        }
+
+        .home-content-con {
+            padding: 4rem 2.5rem;
+        }
+
+        .navbar {
+            padding: 0 3rem;
+
+            >.logo {
+                padding: 2rem 0;
+            }
+
+            ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 0;
+                @include flex();
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                transition: none;
+
+                li {
+                    margin: 0;
+                    text-align: center;
+
+                    a {
+                        padding: 3rem;
+                    }
+                }
+
+                &::before {
+                    background-image: url(../assets/destination/background-destination-desktop.jpg);
+                    @include backmage(cover);
+                    opacity: .9;
+                }
+            }
+
+            button {
+                display: inline-block;
+                color: $fadeWhite;
+                font-size: 3.5rem;
+                background-color: transparent;
+                cursor: pointer;
+
+            }
+        }
+
+        #crew {
+            background-image: url(../assets/crew/background-crew-mobile.jpg);
+        }
+    }
+}

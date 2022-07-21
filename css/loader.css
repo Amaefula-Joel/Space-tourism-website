@@ -1,0 +1,71 @@
+/* #loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 9999;
+    width: 4rem;
+    height: 4rem;
+    margin: -4rem 0 0 -4rem;
+    border: 1rem solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+} */
+
+#loader{    
+    width: 12rem;
+    height: 12rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8888;
+    background-image: url(../assets/rocket-19678.png);
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: invert(1);
+}
+
+#loader::before{
+    content: "";
+    position: absolute;
+    left: -.5rem;
+    top: -.5rem;
+    z-index: 9999;
+    border: 1rem solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 1rem solid rgba(0, 0, 0, 0.78);
+    width: 11rem;
+    height: 11rem;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    filter: hue-rotate(180deg);
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.body-container {
+    display: none;
+}

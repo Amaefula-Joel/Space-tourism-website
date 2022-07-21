@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="font-awesome(4.7.0)/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/mainstyle.css">
+
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+
+<body onload="myFunction()">
+
+  <section id="crew">
+    <div id="loader"></div>
+
+    <div class="body-container">
+      <header>
+        <nav class="navbar">
+          <a href="#" class="logo"><img src="assets/shared/logo.svg" alt="site logo "></a>
+
+          <span class="line"></span>
+
+          <ul id="navlink-con">
+            <li><a class="customLink" href="index.html"><b>00</b> Home</a></li>
+            <li><a class="customLink" href="destination.html"><b>01</b> Destination</a></li>
+            <li><a class="customLink active" href="crew.html"><b>02</b> Crew</a></li>
+            <li><a class="customLink" href="technology.html"><b>03</b> Technology</a></li>
+          </ul><!--  -->
+          <button class="toggleNav fa fa-bars"></button>
+        </nav>
+      </header>
+
+      <div class="home-content-con">
+        <h1 class="page-title"><span>02</span> Meet your crew</h1>
+
+        <div class="home-content">
+          <div class="left">
+            <div class="content">
+              <div class="left-carousel-content animated fadeIn">
+                <p class="role">Commander</p>
+
+                <h2 class="name page-subtitle">Douglas Hurley</h2>
+
+                <p class="rightup">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former
+                  NASA
+                  astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
+              </div>
+
+              <div class="left-carousel-content animated fadeIn">
+                <p class="role">Mission Specialist</p>
+
+                <h2 class="name page-subtitle">Mark Shuttleworth</h2>
+
+                <p class="rightup">Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the
+                  Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as
+                  a
+                  space tourist.</p>
+              </div>
+
+              <div class="left-carousel-content animated fadeIn">
+                <p class="role">Pilot</p>
+
+                <h2 class="name page-subtitle">Victor Glover</h2>
+
+                <p class="rightup">Pilot on the first operational flight of the SpaceX Crew Dragon to the International
+                  Space
+                  Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of
+                  Expedition
+                  64, and served as a station systems flight engineer.</p>
+              </div>
+
+              <div class="left-carousel-content animated fadeIn">
+                <p class="role">Flight Engineer</p>
+
+                <h2 class="name page-subtitle">Anousheh Ansari</h2>
+
+                <p class="rightup">Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems.
+                  Ansari
+                  was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first
+                  Iranian in space.</p>
+              </div>
+
+              <div class="controls">
+                <span onclick="crewFunc(0)" id="defaultCrew"></span>
+                <span onclick="crewFunc(1)"></span>
+                <span onclick="crewFunc(2)"></span>
+                <span onclick="crewFunc(3)"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="right fill"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="javascript/jquery-3.6.0.min.js"></script>
+    <script src="javascript/myscrpt.js"></script>
+    <script>
+      //script for crew page starts here
+      var currentCrew = 1;
+
+      function crewFunc(n) {
+        var carouselContent = document.getElementsByClassName(
+          "left-carousel-content"
+        );
+        var crewImages = [
+          "assets/crew/image-douglas-hurley.png",
+          "assets/crew/image-mark-shuttleworth.png",
+          "assets/crew/image-victor-glover.png",
+          "assets/crew/image-anousheh-ansari.png",
+        ];
+        var crewMember = document.querySelector(".right");
+        var carouselBtn = document.querySelectorAll(".controls span");
+
+        for (let i = 0; i < carouselContent.length; i++) {
+          carouselContent[i].style.display = "none";
+        }
+        for (let i = 0; i < carouselBtn.length; i++) {
+          carouselBtn[i].classList.remove("active");
+        }
+
+        carouselContent[n].style.display = "block";
+        carouselBtn[n].classList.add("active");
+        //crewMember.style.backgroundImage = "url(" + crewImages[n] + ")";
+        crewMember.style.backgroundImage = "url(" + crewImages[n] + ")";
+
+        currentCrew = n;
+
+      }
+
+      setInterval(() => {
+        crewFunc(currentCrew);
+        console.log(currentCrew);
+        currentCrew += 1;
+        if (currentCrew >= 4) {
+          currentCrew = 0;
+        }
+      }, 10000);
+      document.getElementById('defaultCrew').click();
+
+    </script>
+  </section>
+</body>
+
+</html>
