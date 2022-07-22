@@ -1,37 +1,60 @@
-## Welcome to GitHub Pages
+# Frontend Mentor - Space tourism website solution
 
-You can use the [editor on GitHub](https://github.com/Amaefula-Joel/Space-tourism-website/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Overview
+This is the second solution on the Front-end site.
+I made this solution in two days and in the best way i could.
+feel free to tell me any where i can improve 
 
-### Markdown
+### The challenge
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Users should be able to:
 
-```markdown
-Syntax highlighted code block
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
 
-# Header 1
-## Header 2
-### Header 3
+### Screenshot
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
-**Bold** and _Italic_ and `Code` text
+### Links
 
-[Link](url) and ![Image](src)
-```
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: (https://amaefula-joel.github.io/Space-tourism-website/)
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+## My process
 
-### Jekyll Themes
+### Built with
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Amaefula-Joel/Space-tourism-website/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Sass
+- Animate.css
+- Mobile-first workflow
+- JavaScript
+- jquery
 
-### Support or Contact
+### What I learned
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+I really was into vanilla CSS, so this was my first time using Sass in a full project.
+My codes really got shorter and my code became more consistent.
+I'm rally excited to use this in my future projects
+
+
+### Continued development
+
+My file structure is something i know i have to work on in any projects i'll work on in the future.
+I'll also like the time it took me to write the JavaSript code to become shorter in future.
+What i still want to improve on in this site is the bac 
+
+### Useful resources
+
+- [Animate css] - Animate css helped me in the faint animations on the Crew and destination pages.
+
+## Author
+
+- Website - [https://www.mrjoelly.chinyproductions.com.ng]
+- Frontend Mentor - [https://www.frontendmentor.io/profile/amaefulajoel](https://www.frontendmentor.io/profile/amaefulajoel)
