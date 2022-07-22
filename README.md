@@ -57,4 +57,4 @@ What i still want to improve on in this site is the bac
 ## Author
 
 - Website - [https://www.mrjoelly.chinyproductions.com.ng]
-- Frontend Mentor - [https://www.frontendmentor.io/profile/amaefulajoel](https://www.frontendmentor.io/profile/amaefulajoel)
+- Frontend Mentor - [https://www.frontendmentor.io/profile/amaefulajoel](Amaefula joel)
